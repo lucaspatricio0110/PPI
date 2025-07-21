@@ -17,5 +17,6 @@ export class AdicionaContato {
   adicionar(nm: string, an: string, tipo: string) {
   let aniversario = new Date(an)
   const c = new Contato(nm, aniversario, tipo)
+  this.contatos.push(c)
   }
 }
