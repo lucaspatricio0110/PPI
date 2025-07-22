@@ -7,16 +7,15 @@
     </div>
     <div>
     <div>
-        <label for="nome">Aniversario</label>
-        <input type="text" name="" id="aniv" #an>
+        <label for="aniv">Aniversario</label>
+        <input type="text" name="nome" id="aniv" #an>
     </div>
      <div>
         <label for="tipo">Tipo</label>
         <select name="nome" id="tipo" #tipo>
-            <option value="Amigo">Amigo(a)</option>
-            <option value="Familia">Familia</option>
-            <option value="Trabalho">Trabalho</option>
-            <option value="Outro">Outro</option>
+            <option *ngFor="let op of opcoesContato" [value]="op">
+                {{op}}
+            </option>
         </select>
     </div>
         <input type="button" value="Adicionar"
