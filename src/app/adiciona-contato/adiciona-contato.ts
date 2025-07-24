@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-adiciona-contato',
-  imports: [CommonModule],
+  standalone: true,
   templateUrl: './adiciona-contato.html',
   styleUrl: './adiciona-contato.css'
+  imports: [CommonModule]
 })
 export class AdicionaContato {
   contatos: Contato []
