@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Contato, TipoContato } from './contato';
+import { Contato } from './contato';
 import { CommonModule } from '@angular/common';
 
 @Component({
