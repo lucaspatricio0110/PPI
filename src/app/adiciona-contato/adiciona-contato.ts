@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-adiciona-contato',
   standalone: true,
   templateUrl: './adiciona-contato.html',
-  styleUrl: './adiciona-contato.css'
+  styleUrl: './adiciona-contato.css',
   imports: [CommonModule]
 })
 export class AdicionaContato {
