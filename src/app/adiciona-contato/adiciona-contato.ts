@@ -11,27 +11,14 @@ import { CommonModule } from '@angular/common';
 })
 export class AdicionaContato {
   contatos: Contato []
-  opcoesContato: string[]
 
   constructor() {
     this.contatos = []
-    this.opcoesContato = Object.values(TipoContato)
-  }
-  adicionar(nm: string, an: string, tp: string) {
-  let aniversario = new Date(an)
-  let tipo = this.getTipoContato(tp)
-  const c = new Contato(nm, aniversario, tipo)
-  this.contatos.push(c)
-  }
-  getTipoContato(str: string) {
-    if (str === TipoContato.AMIGO) {
-      return TipoContato.AMIGO
-    } else if (str === TipoContato.TRABALHO) {
-      return TipoContato.TRABALHO
-    } else if (str === TipoContato.FAMILIA) {
-      return TipoContato.FAMILIA
-    } else {
-      return TipoContato.TRABALHO
-    }
+    
+  adicionar(nm: string, tel: number, em: string, an: string, tipo: string) {
+  let aniversario = new Date(an);
+  aniversario.setMinutes(aniversario.getMinutes() + aniversario.getTimezoneOffset());
+  const c = new Contato(nm, tel, em, aniversario, tipo);
+  this.contatos.push(c);
   }
 }
