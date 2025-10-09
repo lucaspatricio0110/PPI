@@ -8,5 +8,4 @@ export interface Filme {
     plot: string
     Langague: string
     Country: string
-    Poster: string
 }
