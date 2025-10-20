@@ -1,1 +1,33 @@
-<p>lucas cagão</p>
+<div class="container">
+  <h2>Buscar Filmes</h2>
+
+  <input type="text" [(ngModel)]="titulo" placeholder="Digite o título do filme" />
+
+  <div>
+    <label><input type="radio" [(ngModel)]="tipoBusca" value="t" /> Um filme</label>
+    <label><input type="radio" [(ngModel)]="tipoBusca" value="s" /> Lista de filmes</label>
+  </div>
+
+  <button (click)="buscar()">Buscar</button>
+
+  <p *ngIf="erro" style="color: red;">{{ erro }}</p>
+
+  <div *ngIf="filme && tipoBusca === 't'">
+    <h3>{{ filme.Title }} ({{ filme.Year }})</h3>
+    <p><strong>Diretor:</strong> {{ filme.Director }}</p>
+    <p><strong>Gênero:</strong> {{ filme.Genre }}</p>
+    <p><strong>Elenco:</strong> {{ filme.Actors }}</p>
+    <p><strong>Idioma:</strong> {{ filme.Language }}</p>
+    <p><strong>País:</strong> {{ filme.Country }}</p>
+    <p><strong>Resumo:</strong> {{ filme.Plot }}</p>
+  </div>
+
+  <div *ngIf="lista.length > 0 && tipoBusca === 's'">
+    <h3>Resultados da busca:</h3>
+    <ul>
+      <li *ngFor="let f of lista">
+        <strong>{{ f.Title }}</strong> ({{ f.Year }})
+      </li>
+    </ul>
+  </div>
+</div>
