@@ -1,9 +1,6 @@
 import { Routes } from '@angular/router';
-import { BuscaFilme } from './busca/busca-filme';
-import { BuscaLista } from './busca/busca-lista';
+import { Busca } from './busca/busca';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'filme', pathMatch: 'full' },
-  { path: 'filme', component: BuscaFilme },
-  { path: 'lista', component: BuscaLista },
+  { path: '', component: Busca },
 ];
